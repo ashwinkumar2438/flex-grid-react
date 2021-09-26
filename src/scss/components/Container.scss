@@ -1,0 +1,41 @@
+@import '../variables';
+
+.main-container{
+    flex-basis: 50%;
+    flex-grow: 0;
+    height: max-content;
+    min-height: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+
+    .dragger{
+        flex-basis: 0.5rem;
+        flex-grow: 0;
+        background-color: $tag-color;
+        cursor:col-resize;
+    }
+
+    .parent-box{
+        flex-grow: 1;
+        display:flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        align-items: center;
+        height: max-content;
+
+        .child-box{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5rem;
+            color: #fff;
+            flex: 20%;
+            height: 20rem;
+            padding: 0.5rem;
+            background-image: linear-gradient( to right, #{ $base-color }, #{ $base-color } ), 
+                                linear-gradient( to right, #{ $secondary-color }, #{ $secondary-color } );
+            background-clip: content-box, padding-box;
+        }
+    }
+    
+}

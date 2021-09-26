@@ -1,0 +1,17 @@
+.main-form{
+    flex-grow: 1;
+    display:grid;
+    grid-template-columns: repeat( 2, minmax( 0, 1fr ) );
+    grid-template-rows: auto 3rem;
+    align-content: start;
+    align-items: center;
+    grid-gap: 1rem;
+    padding: 1rem;
+    .form-label, .form-input{   
+        font-size: 1rem;
+    }
+
+    label{
+        text-transform: capitalize;    
+     }
+}

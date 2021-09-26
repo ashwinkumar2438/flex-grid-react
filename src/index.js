@@ -1,8 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import './scss/base.scss';
+import App from './App.jsx';
 import reportWebVitals from './reportWebVitals';
+import SlideBar from './web_components/Slidebar';
+
+if (!customElements.get("slide-bar")) {
+  customElements.define("slide-bar", SlideBar);
+}
 
 ReactDOM.render(
   <React.StrictMode>
