@@ -2,31 +2,39 @@
 import { useEffect, useRef, useCallback } from 'react';
 import '../scss/components/Slider.scss';
 
-const Slider = ( { value = 0 , unit = 'px', onChange, maximum = 500 } ) => {
+const Slider = ( { value:seekValue = { value: 0, id: '' }, unit = '%', maximum = 100, onChange } ) => {
 
     const slidebarRef = useRef()
 
     const seekChanged = useCallback( ( e ) => {
         const progress = e.target.getAttribute("progress");
-        const seekedValue  = ( progress * maximum ) / 100
-        onChange( seekedValue );
-    } , [ onChange ])
+        const seekedValue  = Math.ceil( ( progress * maximum ) / 100 );
+
+        const newValue = {
+            value: seekedValue,
+            id: seekValue.id
+        }
+        onChange?.( newValue );
+
+    } , [ onChange, maximum, seekValue.id ]);
 
     useEffect( () => {
         if( !slidebarRef.current )return;
-        slidebarRef.current.addEventListener("seekchange", seekChanged );
+        const sliderBar = slidebarRef.current;
+
+        sliderBar.addEventListener("seekchange", seekChanged );
 
         return () => {
-            slidebarRef.current.removeEventListener("seekchange", seekChanged );
+            sliderBar.removeEventListener("seekchange", seekChanged );
         }
     } ,[ seekChanged ]);
 
     return (
         <div className="slider-wrapper">
             <div className="current-value">
-                <span>{ value + unit }</span>
+                <span>{ seekValue.value + unit }</span>
             </div>
-            <slide-bar progress= { ( value / maximum ) * 100  } ref= { slidebarRef }></slide-bar>
+            <slide-bar progress= { ( seekValue.value / maximum ) * 100  } ref= { slidebarRef }></slide-bar>
         </div>
     )
 }

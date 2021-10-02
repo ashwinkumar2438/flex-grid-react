@@ -1,18 +1,28 @@
 //custom imports:
 import useDrag from '../hooks/useDrag';
+import { getStyles } from '../helpers/utils';
 //style imports:
 import '../scss/components/Container.scss';
-const Container = ({ appRef, count = 3 }) => {
+const Container = ({ 
+    appRef,
+    displayType = 'flex',
+    parentForm = [],
+    childrenForm = [],
+}) => {
 
-    const [ width, observe ] = useDrag();
+    const [ containerStyle , observe ] = useDrag();
     return (
-        <div className="main-container" style = { { flexBasis: `${ width }%`} }>
+        <div className="main-container" style = { containerStyle }>
             <div className="dragger" {...observe( appRef ) }></div>
-            <div className="parent-box">
+            <div className="parent-box" style = { { display: displayType, ...getStyles( parentForm ) }}>
                 {
-                    [ ...Array( count )].map( ( _, i ) => {
+                    childrenForm.map( ( form, i ) => {
                         return ( 
-                            <div className={ `child-box child-${ i + 1 }` } key = { i }>
+                            <div 
+                                className={ `child-box child-${ i + 1 }` } 
+                                key = { i }
+                                style = { getStyles( form )}
+                                >
                                 { i + 1 }
                             </div>
                         )
