@@ -23,10 +23,10 @@ const useDrag = () => {
     } );
 
     const userActivity = useCallback( ( e ) => {
-        e.preventDefault();
         const eventType = e.type ;
         const userActive = screenTouchEvents.includes( eventType );
         dragData.current.active = userActive ;
+        userActive  &&  e.preventDefault();
     } , [])
 
     const drag = useCallback ( ( e ) => {
