@@ -20,6 +20,15 @@ const flex = [
             options: ['0', '1', '2', '3' ]
         },
     },
+    {
+        id:'flexShrink',
+        type:'select',
+        label: 'flex-shrink',
+        value:'1',   
+        props:{
+            options: ['0', '1', '2', '3' ]
+        },
+    },
 
 ]
 
