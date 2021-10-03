@@ -42,7 +42,6 @@ const useChildForm = ( displayType = 'flex' ) => {
 
 
     const updateChildren = useCallback( ( childIndices = [], fieldId, value ) => {
-           console.log( childIndices, fieldId, value );
            setChildrenForm( forms => forms.map( ( form, index ) => {
                     if( !childIndices.includes( index ) ) return form;
 

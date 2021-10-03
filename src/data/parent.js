@@ -103,7 +103,6 @@ const parentDefaultForm = {
     grid: fieldStandardise( grid )
 }
 
-console.log( parentDefaultForm );
 
 
 export default parentDefaultForm;
