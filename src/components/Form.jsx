@@ -33,7 +33,6 @@ const Form = ( {
         } , [ setParentForm ])
 
         const updateChild = useCallback( ( value ) => {
-            console.log( value );
             setChildrenForm([ currentChild.value ], value.id, value );
         }, [ currentChild.value , setChildrenForm ] )
 

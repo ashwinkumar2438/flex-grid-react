@@ -20,7 +20,8 @@
         flex-flow: row wrap;
         justify-content: center;
         align-items: center;
-        height: max-content;
+        height: 500px;
+        background-color: $background-color;
 
         .child-box{
             display: flex;
@@ -29,7 +30,8 @@
             font-size: 1.5rem;
             color: #fff;
             flex: 20%;
-            height: 20rem;
+            min-height: 20%;
+            min-width: 20%;
             padding: 0.5rem;
             background-image: linear-gradient( to right, #{ $base-color }, #{ $base-color } ), 
                                 linear-gradient( to right, #{ $secondary-color }, #{ $secondary-color } );
