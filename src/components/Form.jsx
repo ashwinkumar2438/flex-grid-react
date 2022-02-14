@@ -25,7 +25,7 @@ const Form = ( {
       
         const [ currentChild, setCurrentChild ] = useState( { label: 1, value: 0 } );
 
-        const childOptions =  childrenForm.map( ( _, index ) => ( { label: index+1, value: index } ) );
+        const childOptions =  childrenForm.map( ( _, index ) => ( { label: index + 1, value: index } ) );
 
 
         const updateParent = useCallback( ( value ) => {

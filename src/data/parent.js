@@ -73,6 +73,15 @@ const flex = [
             options: ['center', 'flex-start', 'flex-end', 'space-between', 'space-evenly', 'stretch' ]
         },
     },
+    {
+        id:'alignContent',
+        type:'select',
+        label: 'align-content',
+        value:'stretch',   
+        props:{
+            options: ['center', 'flex-start', 'flex-end', 'space-between', 'space-evenly', 'stretch' ]
+        },
+    },
 
 ]
 

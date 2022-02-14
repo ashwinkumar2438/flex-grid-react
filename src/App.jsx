@@ -17,15 +17,17 @@ function App() {
 
   return (
     <div className= "app" ref= { appRef }>
-      <Form 
-        displayType = { displayType }
-        setDisplayType = { setDisplayType }
-        parentForm = { parentForm }
-        setParentForm = { setParentForm }
-        childrenForm = { childrenForm }
-        setChildrenForm = { setChildrenForm }
-        setChildCount = { setChildCount }
-      />
+      <div className="form-scroll">
+        <Form 
+          displayType = { displayType }
+          setDisplayType = { setDisplayType }
+          parentForm = { parentForm }
+          setParentForm = { setParentForm }
+          childrenForm = { childrenForm }
+          setChildrenForm = { setChildrenForm }
+          setChildCount = { setChildCount }
+        />
+      </div>
       <Container 
         appRef = { appRef } 
         displayType = { displayType }
